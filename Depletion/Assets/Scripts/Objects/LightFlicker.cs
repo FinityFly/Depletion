@@ -16,6 +16,7 @@ public class LightFlicker : MonoBehaviour
     void Start() {
         // get light 2d component
         lightComponent = GetComponent<Light2D>();
+        speed *= 0.06f;
     }
 
     void Update()
@@ -23,17 +24,17 @@ public class LightFlicker : MonoBehaviour
         // maybe add a random element to it - i dont want to attract too much attention to it tho
         if (isDimming) {
             if (lightComponent.pointLightOuterRadius > minIntensity) {
-                lightComponent.pointLightOuterRadius -= speed * 0.1f;
+                lightComponent.pointLightOuterRadius -= speed + Random.Range(0, speed * 0.4f);
             } else {
                 isDimming = false;
-                lightComponent.pointLightOuterRadius += speed * 0.1f;
+                lightComponent.pointLightOuterRadius += speed + Random.Range(0, speed * 0.4f);
             }
         } else {
             if (lightComponent.pointLightOuterRadius < maxIntensity) {
-                lightComponent.pointLightOuterRadius += speed * 0.1f;
+                lightComponent.pointLightOuterRadius += speed + Random.Range(0, speed * 0.4f);
             } else {
                 isDimming = true;
-                lightComponent.pointLightOuterRadius -= speed * 0.1f;
+                lightComponent.pointLightOuterRadius -= speed + Random.Range(0, speed * 0.4f);
             }
         }
     }

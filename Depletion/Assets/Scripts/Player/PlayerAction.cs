@@ -32,6 +32,7 @@ public class PlayerAction : MonoBehaviour
                         // make boulder change sprite
                         colliders[i].gameObject.GetComponent<BoulderBreak>().breakStage++;
                         // maybe add a 0.5 second cooldown
+                        // when held down, i want it to break once in the middle of the animation
                         break;
                     }
                 }
