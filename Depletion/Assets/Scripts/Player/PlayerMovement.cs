@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         } else {
             movement.y = 0;
         }
+        // sends data to player animator to play the right animation
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // actually moving the rb
+        // actually moving the player
         rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 }
