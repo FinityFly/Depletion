@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
+
+public class LightFlicker : MonoBehaviour
+{
+    public Light2D lightComponent;
+    // depending on light source, change these values
+    public float minIntensity = 3.9f;
+    public float maxIntensity = 4.1f;
+    public float speed = 0.02f;
+
+    private bool isDimming = false;
+
+    void Start() {
+        // get light 2d component
+        lightComponent = GetComponent<Light2D>();
+    }
+
+    void Update()
+    {
+        // maybe add a random element to it - i dont want to attract too much attention to it tho
+        if (isDimming) {
+            if (lightComponent.pointLightOuterRadius > minIntensity) {
+                lightComponent.pointLightOuterRadius -= speed * 0.1f;
+            } else {
+                isDimming = false;
+                lightComponent.pointLightOuterRadius += speed * 0.1f;
+            }
+        } else {
+            if (lightComponent.pointLightOuterRadius < maxIntensity) {
+                lightComponent.pointLightOuterRadius += speed * 0.1f;
+            } else {
+                isDimming = true;
+                lightComponent.pointLightOuterRadius -= speed * 0.1f;
+            }
+        }
+    }
+}
+
