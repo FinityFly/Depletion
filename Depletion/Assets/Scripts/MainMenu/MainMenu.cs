@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
 	public void PlayGame()
 	{
-		SceneManager.LoadScene("Winter"); //Replace this with future save system.
+		SceneManager.LoadScene("Winter"); // Replace this with future save system.
 	}
 	public void QuitGame()
 	{

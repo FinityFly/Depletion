@@ -5,10 +5,10 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class LightFlicker : MonoBehaviour
 {
-    public Light2D lightComponent;
+    private Light2D lightComponent;
     // depending on light source, change these values
-    public float minIntensity = 3.9f;
-    public float maxIntensity = 4.1f;
+    public float minIntensity = 3.4f;
+    public float maxIntensity = 3.6f;
     public float speed = 0.02f;
 
     private bool isDimming = false;
