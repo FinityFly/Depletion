@@ -5,10 +5,15 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     public Animator animator;
+    public Animation anim;
     public CircleCollider2D boulderCollider;
     public KeyCode mineKey = KeyCode.Space;
     public Collider2D[] colliders;
     private BoulderBreak file;
+
+    void Start() {
+        anim = gameObject.GetComponent<Animation>();
+    }
 
     // Update is called once per frame
     void Update()

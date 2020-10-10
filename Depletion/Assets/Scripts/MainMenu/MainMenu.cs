@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+	[SerializeField]
+    public string startingScene = "Winter";
+
 	public void PlayGame()
 	{
-		SceneManager.LoadScene("Winter"); // Replace this with future save system.
+		Debug.Log("started");
+		Loading.Instance.Show(SceneManager.LoadSceneAsync(startingScene));
+		Debug.Log("finished");
 	}
 	public void QuitGame()
 	{
