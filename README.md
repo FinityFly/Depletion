@@ -7,7 +7,14 @@ This is the codebase for Depletion.
 Depletion is an open-source suvival game based on the planet of Europa, following the harrowing tale of a crashlanding and stranding.
 
 ## Contributors
+
+### Programmers
+* __PapaSejd (Dëshmor#0797)__
 * FinityFly (finity#3572)
 * Insert Alias Here (Senguku#2814)
-* PapaSejd (Dëshmor#0797)
 
+### Art
+* Insert Alias Here (Ministry#5600)
+
+### Sound Design
+* 
