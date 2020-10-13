@@ -7,7 +7,7 @@ public class Loading : MonoBehaviour
 {
     public static Loading Instance = new Loading();
     private AsyncOperation currentLoadingOperation;
-    public GameObject canvas = this.gameObject;
+    public GameObject canvas;
     private bool isLoading;
     [SerializeField]
     public GameObject percentage;

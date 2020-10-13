@@ -7,9 +7,10 @@ public class PlayerAction : MonoBehaviour
     public Animator animator;
     public Animation anim;
     public CircleCollider2D boulderCollider;
-    public KeyCode mineKey = KeyCode.Space;
+    public KeyCode mineKey = KeyCode.Space, inventoryKey = KeyCode.E;
     public Collider2D[] colliders;
     private BoulderBreak file;
+    public GameObject inventoryCanvas;
 
     void Start() {
         anim = gameObject.GetComponent<Animation>();
@@ -18,6 +19,15 @@ public class PlayerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Open and close inventory
+        if (Input.GetKeyDown(inventoryKey)) {
+            if (inventoryCanvas.activeSelf == false) {
+                inventoryCanvas.SetActive(true);
+            } else {
+                inventoryCanvas.SetActive(false);
+            }
+        }
+
         // Mining
         // If u want, this can be so it only plays the animation once a boulder is in front of the player
         if (Input.GetKeyDown(mineKey)) {
