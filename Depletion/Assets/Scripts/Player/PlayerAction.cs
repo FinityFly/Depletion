@@ -11,6 +11,7 @@ public class PlayerAction : MonoBehaviour
     public Collider2D[] colliders;
     private BoulderBreak file;
     public GameObject inventoryCanvas;
+    public PlayerMovement pm;
 
     void Start() {
         anim = gameObject.GetComponent<Animation>();
@@ -23,8 +24,10 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKeyDown(inventoryKey)) {
             if (inventoryCanvas.activeSelf == false) {
                 inventoryCanvas.SetActive(true);
+                pm.canMove = false;
             } else {
                 inventoryCanvas.SetActive(false);
+                pm.canMove = true;
             }
         }
 

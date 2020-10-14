@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     // it's more organized
     // public Dictionary<string, int> keyBinds = new Dictionary<string, int>();
     // ^ initialize when game/scene start or smth
+    public bool canMove = true;
 
 	void Update()
     {
@@ -50,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // actually moving the player
-        rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime);
+        if (canMove)
+            rb.MovePosition(rb.position + movement * movementSpeed * Time.fixedDeltaTime); // actually moving the player
     }
 }
