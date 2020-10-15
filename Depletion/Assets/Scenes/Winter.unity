@@ -859,6 +859,7 @@ MonoBehaviour:
   downKey: 115
   rightKey: 100
   leftKey: 97
+  canMove: 1
 --- !u!50 &944543061
 Rigidbody2D:
   serializedVersion: 4
@@ -968,6 +969,7 @@ MonoBehaviour:
   inventoryKey: 101
   colliders: []
   inventoryCanvas: {fileID: 331774432}
+  pm: {fileID: 944543060}
 --- !u!61 &944543066
 BoxCollider2D:
   m_ObjectHideFlags: 0

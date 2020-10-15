@@ -7,15 +7,21 @@ public class Loading : MonoBehaviour
 {
     public static Loading Instance = new Loading();
     private AsyncOperation currentLoadingOperation;
-    public GameObject canvas;
+    public GameObject loadingScreenCanvas;
     private bool isLoading;
     [SerializeField]
     public GameObject percentage;
-    private Text percentLoadedText;
+    public Text percentLoadedText;
     private const float minShowingTime = 1f;
     private float timeElapsed;
-    private Animator animator;
+    public Animator animator;
     private bool didTriggerFadeOutAnimation;
+
+    public void setVars(Text percentText, Animator animatorObject)
+    {
+        percentLoadedText = percentText;
+        animator = animatorObject;
+    }
 
     private void Awake()
     {
@@ -26,8 +32,8 @@ public class Loading : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        animator = GetComponent<Animator>();
-        percentLoadedText = percentage.GetComponent<Text>();
+        // animator = GetComponent<Animator>();
+        // percentLoadedText = GetComponent<Text>();
         Hide();
     }
     private void Update()
@@ -60,7 +66,6 @@ public class Loading : MonoBehaviour
     public void Show(AsyncOperation loadingOperation) // also get scene name, i want for the scene name to show at the bottom left corner
     {
         Debug.Log("log 2");
-        canvas.SetActive(true); // problem?
         currentLoadingOperation = loadingOperation;
         currentLoadingOperation.allowSceneActivation = false;
         SetProgress(0f);
@@ -71,8 +76,8 @@ public class Loading : MonoBehaviour
     }
     public void Hide()
     {
-        canvas.SetActive(false);
         currentLoadingOperation = null;
         isLoading = false;
+        loadingScreenCanvas.SetActive(false);
     }
 }
