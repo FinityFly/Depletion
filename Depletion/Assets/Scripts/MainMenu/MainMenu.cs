@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
 		loadingScreenCanvas.SetActive(false);
 		Debug.Log("finished");
 	}
+
 	public void QuitGame()
 	{
 		Debug.Log("Applications has quit. MainMenu.cs");
