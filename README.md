@@ -4,7 +4,7 @@
 
 This is the codebase for Depletion.
 
-Depletion is an open-source suvival game based on the planet of Europa, following the harrowing tale of a crashlanding and stranding.
+Depletion is an open-source survival game based on the planet of Europa, following the harrowing tale of a crashlanding and stranding.
 
 ## Contributors
 
