@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -967,9 +967,11 @@ MonoBehaviour:
   boulderCollider: {fileID: 0}
   mineKey: 32
   inventoryKey: 101
+  interactKey: 32
   colliders: []
   inventoryCanvas: {fileID: 331774432}
   pm: {fileID: 944543060}
+  Interactable: {fileID: 0}
 --- !u!61 &944543066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1012,7 +1014,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.24}
   m_Size: {x: 0.3, y: 0.2}
   m_Direction: 1
---- !u!43 &1025995016
+--- !u!43 &1081873054
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8378,8 +8380,8 @@ MonoBehaviour:
   - {x: 21, y: 12, z: 0}
   - {x: -8, y: 11.999999, z: 0}
   m_ShapePathHash: 1234246569
-  m_Mesh: {fileID: 1025995016}
-  m_InstanceId: 19188
+  m_Mesh: {fileID: 1081873054}
+  m_InstanceId: 22420
 --- !u!43 &1696878905
 Mesh:
   m_ObjectHideFlags: 0

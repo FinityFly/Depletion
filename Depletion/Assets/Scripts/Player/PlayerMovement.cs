@@ -41,12 +41,15 @@ public class PlayerMovement : MonoBehaviour
         } else {
             movement.y = 0;
         }
-        // sends data to player animator to play the right animation
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        animator.SetFloat("LastHorizontal", lastDirection.x);
-        animator.SetFloat("LastVertical", lastDirection.y);
+
+        if (canMove) {
+            // sends data to player animator to play the right animation
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetFloat("LastHorizontal", lastDirection.x);
+            animator.SetFloat("LastVertical", lastDirection.y);
+        }
     }
 
     void FixedUpdate()

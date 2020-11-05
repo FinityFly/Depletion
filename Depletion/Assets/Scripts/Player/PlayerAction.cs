@@ -7,11 +7,12 @@ public class PlayerAction : MonoBehaviour
     public Animator animator;
     public Animation anim;
     public CircleCollider2D boulderCollider;
-    public KeyCode mineKey = KeyCode.Space, inventoryKey = KeyCode.E;
+    public KeyCode mineKey = KeyCode.Space, inventoryKey = KeyCode.E, interactKey = KeyCode.Space;
     public Collider2D[] colliders;
     private BoulderBreak file;
     public GameObject inventoryCanvas;
     public PlayerMovement pm;
+    public Interactable Interactable;
 
     void Start() {
         anim = gameObject.GetComponent<Animation>();
@@ -58,6 +59,15 @@ public class PlayerAction : MonoBehaviour
         }
         if (Input.GetKeyUp(mineKey)) {
             animator.SetBool("MineKey", false);
+        }
+
+        // Interact
+        if (Input.GetKeyDown(interactKey)) {
+            if (Interactable.isInteracted == false) {
+                Interactable.isInteracted = true;
+            } else {
+                Interactable.isInteracted = false;
+            }
         }
     }
 }
