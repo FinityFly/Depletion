@@ -6,43 +6,31 @@ using UnityEngine.UI;
 public class Sign : MonoBehaviour
 {
     public GameObject textObject;
-    public string text = "No text assigned";
+    private string[] dialogue = { "Lorem", "Ipsum", "Text" };
     public GameObject signCanvas;
-    public bool isActivated = false;
-    private bool currentlyActivated = false;
+    public static bool isActivated = false;
     public PlayerMovement pm;
     public Animator animator;
+    public static int count = 0;
 
-    private void Activate() {
-        currentlyActivated = true;
-        signCanvas.SetActive(true);
-        pm.canMove = false;
-        animator.SetFloat("Speed", 0f);
+    public void Activate() {
+        if (count == 0) {
+            signCanvas.SetActive(true);
+            pm.canMove = false;
+            animator.SetFloat("Speed", 0f);
+        }
+        if (count < dialogue.Length) {
+            textObject.GetComponent<Text>().text = dialogue[count];
+            ++count;
+        } else if (count == dialogue.Length) {
+            Deactivate();
+        }
     }
 
     private void Deactivate() {
-        currentlyActivated = false;
         signCanvas.SetActive(false);
         pm.canMove = true;
         animator.SetFloat("Speed", 0f);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        textObject.GetComponent<Text>().text = text;
-        if (isActivated) {
-            Activate();
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isActivated && currentlyActivated == false) {
-            Activate();
-        } else if (isActivated == false) {
-            Deactivate();
-        }
+        count = 0;
     }
 }

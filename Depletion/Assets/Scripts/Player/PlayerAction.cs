@@ -63,11 +63,7 @@ public class PlayerAction : MonoBehaviour
 
         // Interact
         if (Input.GetKeyDown(interactKey)) {
-            if (Interactable.isInteracted == false) {
-                Interactable.isInteracted = true;
-            } else {
-                Interactable.isInteracted = false;
-            }
+            Interactable.Interact();
         }
     }
 }
