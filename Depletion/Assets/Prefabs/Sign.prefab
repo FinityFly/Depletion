@@ -271,10 +271,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textObject: {fileID: 3389021560809293709}
-  text: 'Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-    Lorem Ipsum '
+  dialogue:
+  - Null
   signCanvas: {fileID: 3389021559894618356}
-  isActivated: 0
   pm: {fileID: 1129086149242391412, guid: 45e36b5afd607484a935df5563543f49, type: 3}
   animator: {fileID: 1129086149242391415, guid: 45e36b5afd607484a935df5563543f49,
     type: 3}
@@ -293,6 +292,7 @@ MonoBehaviour:
   radius: 2
   itemScript: {fileID: 3389021560329173919}
   player: {fileID: 1129086149242391411, guid: 45e36b5afd607484a935df5563543f49, type: 3}
+  interactableObject: {fileID: 3389021560329173913}
 --- !u!61 &3389021560329173917
 BoxCollider2D:
   m_ObjectHideFlags: 0
